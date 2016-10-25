@@ -7,14 +7,18 @@
 
 #include "Attribute.h"
 
+Attribute::Attribute(){
+	value = 10;
+}
+
 Attribute::Attribute(short newAttribute){
 	value = newAttribute;
 }
 
-void Attribute::setAttribute(short newAttribute){
+void Attribute::setValue(short newAttribute){
 	value = newAttribute;
 }
 
-short Attribute::getAttribute(){
+short Attribute::getValue(){
 	return value;
 }

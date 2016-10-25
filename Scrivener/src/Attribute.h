@@ -11,10 +11,11 @@
 class Attribute {
 	short value;
 public:
+	Attribute();
 	Attribute(short);
 
-	void setAttribute(short);
-	short getAttribute();
+	void setValue(short);
+	short getValue();
 
 };
 
