@@ -29,6 +29,11 @@ int main(){
 	Attribute *StrPtr = bob.getStrPtr();
 	cout << "Strength: " << StrPtr->getValue() << endl;
 
+	cout << "--------------------------" << endl;
+	bob.rollStats("random");
+	cout << "Strength (random): " << bob.getStr().getValue() << endl;
+	bob.rollStats("4d6 drop lowest");
+	cout << "Strength (4d6 drop lowest): " << bob.getStr().getValue() << endl;
 
 	return 0;
 }
