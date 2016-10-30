@@ -12,6 +12,9 @@
 #include <cstdlib>
 #include <ctime>
 
+short rollD6();
+short Roll4D6DropLowest();
+
 CharacterSheet::CharacterSheet() {
 //	strength = 0;
 //	dexterity = 0;
@@ -34,26 +37,56 @@ void CharacterSheet::rollStats(std::string method){
 		std::srand(std::time(0));
 		baseStrength.setValue(std::rand()%18+1);
 	}else if(method == "4d6 drop lowest"){
-		std::srand(std::time(0));
-		int roll;
-		int lowest;
-		int sum;
-
-		roll = lowest = sum = std::rand()%6+1;
-
-		roll = std::rand()%6+1;
-		lowest = std::min(lowest,roll);
-		sum += roll;
-
-		roll = std::rand()%6+1;
-		lowest = std::min(lowest,roll);
-		sum += roll;
-
-		roll = std::rand()%6+1;
-		lowest = std::min(lowest,roll);
-		sum += roll;
-
-		sum -= lowest;
-		baseStrength.setValue(sum);
+		baseStrength.setValue(Roll4D6DropLowest());
+		baseDexterity.setValue(Roll4D6DropLowest());
+		baseConstitution.setValue(Roll4D6DropLowest());
+		baseIntelligence.setValue(Roll4D6DropLowest());
+		baseWisdom.setValue(Roll4D6DropLowest());
+		baseCharisma.setValue(Roll4D6DropLowest());
+	}else if(method == "average"){
+		baseStrength.setValue(10);
+		baseDexterity.setValue(10);
+		baseConstitution.setValue(10);
+		baseIntelligence.setValue(10);
+		baseWisdom.setValue(10);
+		baseCharisma.setValue(10);
 	}
+}
+
+short rollD6(){
+	std::srand(std::time(0));
+	return std::rand()%6+1;
+}
+
+short Roll4D6DropLowest(){
+	short roll;
+	short lowest;
+	short sum;
+
+	roll = lowest = sum = rollD6();
+
+	roll = rollD6();
+	lowest = std::min(lowest,roll);
+	sum += roll;
+
+	roll = rollD6();
+	lowest = std::min(lowest,roll);
+	sum += roll;
+
+	roll = rollD6();
+	lowest = std::min(lowest,roll);
+	sum += roll;
+
+	sum -= lowest;
+
+	return sum;
+}
+
+Attribute CharacterSheet::getAttribute(std::string attr){
+		if(attr == "strength" || attr == "str"){
+			return baseStrength;
+		}else if(attr == "dexterity" || attr == "dex"){
+			return baseDexterity;
+		}
+		throw "Undefined Attribute";
 }

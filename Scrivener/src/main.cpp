@@ -12,6 +12,8 @@
 
 using namespace std;
 
+void printStats(CharacterSheet);
+
 //int main(int argc, char* argv[])
 
 int main(){
@@ -35,5 +37,18 @@ int main(){
 	bob.rollStats("4d6 drop lowest");
 	cout << "Strength (4d6 drop lowest): " << bob.getStr().getValue() << endl;
 
+	printStats(bob);
+
 	return 0;
+}
+
+void printStats(CharacterSheet character){
+	try{
+		cout << "Name: " << endl
+				<< "Strength: " << character.getAttribute("strength").getValue() << endl
+				<< "Dexterity: " << character.getAttribute("dexterity").getValue() << endl
+				<< "Constition" << character.getAttribute("constitution").getValue() << endl;
+	}catch(...){
+		cout << "Bad attribute!" << endl;
+	}
 }

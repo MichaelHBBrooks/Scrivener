@@ -33,6 +33,7 @@ public:
 	Attribute getStr();
 	Attribute *getStrPtr();
 
+	Attribute getAttribute(std::string stat);
 	void rollStats(std::string);
 };
 
