@@ -11,6 +11,7 @@
 #include <string>
 #include <cstdlib>
 #include <ctime>
+#include <vector>
 
 short rollD6();
 short Roll4D6DropLowest();
@@ -22,6 +23,13 @@ CharacterSheet::CharacterSheet() {
 //	intelligence = 0;
 //	wisdom = 0;
 //	charisma = 0;
+	baseAttributes.reserve(6);
+	baseAttributes[0].setName("strength");
+	baseAttributes[1].setName("dexterity");
+	baseAttributes[2].setName("constitution");
+	baseAttributes[3].setName("intelligence");
+	baseAttributes[4].setName("wisdom");
+	baseAttributes[5].setName("charisma");
 }
 
 Attribute CharacterSheet::getStr(){
