@@ -10,7 +10,6 @@
 
 #include "Attribute.h"
 #include <string>
-#include <vector>
 
 class CharacterSheet {
 	std::string characterName;
@@ -29,8 +28,6 @@ class CharacterSheet {
 	Attribute baseIntelligence;
 	Attribute baseWisdom;
 	Attribute baseCharisma;
-
-	std::vector<Attribute> baseAttributes;
 
 public:
 	CharacterSheet();
