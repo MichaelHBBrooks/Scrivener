@@ -1,8 +1,7 @@
-/*
- * CharacterSheet.cpp
+/**
+ * Character Sheet
+ * @author	Michael.H.B.Brooks@gmail.com
  *
- *  Created on: Oct 23, 2016
- *      Author: jinieren
  */
 
 #include "CharacterSheet.h"

@@ -15,12 +15,23 @@ class CharacterSheet {
 	std::string characterName;
 	std::string playerName;
 	signed int experience;
-//	enum class alignment1 { lawful, neutral, chaotic };
-//	enum class alignment2 { good, neutral, evil };
+	enum alignment1 { alignment1_lawful, alignment1_neutral, alignment1_chaotic };
+	enum alignment2 { alignment2_good, alignment2_neutral, alignment2_evil };
 	float baseWeight;
 
-	//  Size is derived from race and spell effects. I just don't want to get rid of this yet.
-	//enum class size { fine, diminutive, tiny, small, medium, large, huge, gargantuan, colossal, colossalPlus };
+	/**
+	 * Size is derived from race and spell effects.
+	 */
+	enum size { size_fine,
+				size_diminutive,
+				size_tiny,
+				size_small,
+				size_medium,
+				size_large,
+				size_huge,
+				size_gargantuan,
+				size_colossal,
+				size_colossalPlus };
 
 	Attribute baseStrength;
 	Attribute baseDexterity;
