@@ -42,3 +42,8 @@ void Attribute::setAbbreviation(std::string newAbbreviation){
 std::string Attribute::getAbbreviation(){
 	return abbreviation;
 }
+
+short Attribute::getAttributeModifier(){
+//	return value>0 ? (value - 10) / 2 : (value-11) / 2;
+	return value%2 == 0 ? (value-10)/2 : (value-11) / 2;
+}

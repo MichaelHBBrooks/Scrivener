@@ -28,6 +28,7 @@ public:
 	void setAbbreviation(std::string);
 	std::string getAbbreviation();
 
+	short getAttributeModifier();
 };
 
 #endif /* SRC_ATTRIBUTE_H_ */

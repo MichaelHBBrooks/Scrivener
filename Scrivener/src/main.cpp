@@ -57,14 +57,26 @@ int main(int argc, char* argv[]){
  * @param character The character whose stats will be printed.
  */
 void printStats(CharacterSheet character){
+	Attribute str = character.getAttribute("strength");
+	Attribute dex = character.getAttribute("dexterity");
+	Attribute con = character.getAttribute("constitution");
+	Attribute inte = character.getAttribute("intelligence");
+	Attribute wis = character.getAttribute("wisdom");
+	Attribute cha = character.getAttribute("charisma");
+
+	//  Apparently I'm not using C++11. What am I using? More investigation will
+	//  be needed.
+	//string strMod = str.getAttributeModifier() > 0 ? "+"+str.getAttributeModifier() : str.getAttributeModifier();
+	//string strMod = std::to_string(str.getAttributeModifier());
+
 	try{
 		cout << "Name: " << endl
-				<< "Str: " << character.getAttribute("strength").getValue() << endl
-				<< "Dex: " << character.getAttribute("dexterity").getValue() << endl
-				<< "Con: " << character.getAttribute("constitution").getValue() << endl
-				<< "Int: " << character.getAttribute("intelligence").getValue() << endl
-				<< "Wis: " << character.getAttribute("wisdom").getValue() << endl
-				<< "Cha: " << character.getAttribute("charisma").getValue() << endl;
+				<< "Str: " << str.getValue() << " (" << str.getAttributeModifier() << ')' << endl
+				<< "Dex: " << dex.getValue() << " (" << dex.getAttributeModifier() << ')' << endl
+				<< "Con: " << con.getValue() << " (" << con.getAttributeModifier() << ')' << endl
+				<< "Int: " << inte.getValue() << " (" << inte.getAttributeModifier() << ')' << endl
+				<< "Wis: " << wis.getValue() << " (" << wis.getAttributeModifier() << ')' << endl
+				<< "Cha: " << cha.getValue() << " (" << cha.getAttributeModifier() << ')' << endl;
 	}catch(...){
 		cout << "Bad attribute!" << endl;
 	}
