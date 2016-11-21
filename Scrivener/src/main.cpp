@@ -13,6 +13,11 @@
 
 #include "Attribute.h"
 #include "CharacterSheet.h"
+#include "json/reader.h"
+#include "json/writer.h"
+#include "json/elements.h"
+
+#include <sstream>
 #include <iostream>
 #include <string>
 
