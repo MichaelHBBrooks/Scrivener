@@ -127,3 +127,15 @@ Attribute CharacterSheet::getAttribute(std::string attr){
 		}
 		throw "Undefined Attribute";
 }
+
+short CharacterSheet::getFortitudeSave(){
+	return baseConstitution.getAttributeModifier();
+}
+
+short CharacterSheet::getReflexSave(){
+	return baseDexterity.getAttributeModifier();
+}
+
+short CharacterSheet::getWillSave(){
+	return baseWisdom.getAttributeModifier();
+}
