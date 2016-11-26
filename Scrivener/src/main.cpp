@@ -23,6 +23,7 @@
 
 using namespace std;
 
+void loadData();
 void printStats(CharacterSheet);
 
 /**
@@ -32,6 +33,7 @@ void printStats(CharacterSheet);
  * @return
  */
 int main(int argc, char* argv[]){
+	loadData();
 	Attribute str (10);
 	cout << "Strength = " << str.getValue() << endl;
 
@@ -55,6 +57,18 @@ int main(int argc, char* argv[]){
 	printStats(bob);
 
 	return 0;
+}
+
+/**
+ * Load all data.
+ * Various global variables will be defined by functions called through here.
+ */
+void loadData(){
+	//loadStandardSkills();
+	//loadStandardItems();
+	//loadStandardRaces();
+	//loadStandardClasses();
+	//loadPlayerData();
 }
 
 /**
