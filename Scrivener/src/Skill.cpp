@@ -12,9 +12,14 @@ Skill::Skill(){
 	value = 0;
 }
 
-Skill::Skill(std::string newName, short newValue){
+Skill::Skill(std::string& newName, short newValue){
 	name = newName;
 	value = newValue;
+}
+
+Skill::Skill(std::string& newName){
+	name = newName;
+	value = 0;
 }
 
 void Skill::setSkillValue(short newValue){

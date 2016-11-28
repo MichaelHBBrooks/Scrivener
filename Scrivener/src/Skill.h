@@ -13,9 +13,16 @@
 class Skill {
 	std::string name;
 	short value;
+
+//	struct synergyBonus {
+//		short bonusValue;
+//		Skill* synergySkill;
+//		std::string synergyCircumstance;
+//	};
 public:
 	Skill();
-	Skill(std::string,short);
+	Skill(std::string&,short);
+	Skill(std::string&);
 
 	void setSkillValue(short);
 	short getSkillValue();

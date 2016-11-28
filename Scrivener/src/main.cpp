@@ -12,6 +12,7 @@
  */
 
 #include "Attribute.h"
+#include "Skill.h"
 #include "CharacterSheet.h"
 #include "json/reader.h"
 #include "json/writer.h"
@@ -20,11 +21,16 @@
 #include <sstream>
 #include <iostream>
 #include <string>
+#include <vector>
 
 using namespace std;
 
 void loadData();
+void loadStandardSkills();
 void printStats(CharacterSheet);
+void cleanup();
+
+vector<Skill*> standardSkills;
 
 /**
  *
@@ -56,6 +62,7 @@ int main(int argc, char* argv[]){
 
 	printStats(bob);
 
+	cleanup();
 	return 0;
 }
 
@@ -64,11 +71,63 @@ int main(int argc, char* argv[]){
  * Various global variables will be defined by functions called through here.
  */
 void loadData(){
-	//loadStandardSkills();
+	loadStandardSkills();
 	//loadStandardItems();
 	//loadStandardRaces();
 	//loadStandardClasses();
 	//loadPlayerData();
+}
+
+/**
+ * Loads all known skills.
+ * For now, this is hard coded. The skillNames vector will be replaced by either a JSON or XML file.
+ * Data will be loaded into a global skills variable afterward however.
+ */
+void loadStandardSkills(){
+	vector<string> skillNames;
+	skillNames.push_back("Appraise");
+	skillNames.push_back("Balance");
+	skillNames.push_back("Bluff");
+	skillNames.push_back("Climb");
+	skillNames.push_back("Concentration");
+	skillNames.push_back("Craft");
+	skillNames.push_back("Decipher Script");
+	skillNames.push_back("Diplomacy");
+	skillNames.push_back("Disable Device");
+	skillNames.push_back("Disguise");
+	skillNames.push_back("Escape Artist");
+	skillNames.push_back("Forgery");
+	skillNames.push_back("Gather Information");
+	skillNames.push_back("Handle Animal");
+	skillNames.push_back("Heal");
+	skillNames.push_back("Hide");
+	skillNames.push_back("Intimidate");
+	skillNames.push_back("Jump");
+	skillNames.push_back("Knowledge");
+	skillNames.push_back("Listen");
+	skillNames.push_back("Move Silently");
+	skillNames.push_back("Open Lock");
+	skillNames.push_back("Perform");
+	skillNames.push_back("Profession");
+	skillNames.push_back("Ride");
+	skillNames.push_back("Search");
+	skillNames.push_back("Sense Motive");
+	skillNames.push_back("Sleight Of Hand");
+	skillNames.push_back("Speak Language");
+	skillNames.push_back("Spellcraft");
+	skillNames.push_back("Spot");
+	skillNames.push_back("Survival");
+	skillNames.push_back("Swim");
+	skillNames.push_back("Tumble");
+	skillNames.push_back("Use Magic Device");
+	skillNames.push_back("Use Rope");
+
+	Skill* someSkill;
+	for(vector<string>::iterator x = skillNames.begin(); x != skillNames.end(); ++x){
+		someSkill = new Skill(*x);
+		//standardSkills.push_back
+		standardSkills.push_back(someSkill);
+	}
 }
 
 /**
@@ -83,11 +142,6 @@ void printStats(CharacterSheet character){
 	Attribute wis = character.getAttribute("wisdom");
 	Attribute cha = character.getAttribute("charisma");
 
-	//  Apparently I'm not using C++11. What am I using? More investigation will
-	//  be needed.
-	//string strMod = str.getAttributeModifier() > 0 ? "+"+str.getAttributeModifier() : str.getAttributeModifier();
-	//string strMod = std::to_string(str.getAttributeModifier());
-
 	try{
 		cout << "Name: " << endl
 				<< "Str: " << str.getValue() << " (" << str.getAttributeModifier() << ')' << endl
@@ -98,5 +152,11 @@ void printStats(CharacterSheet character){
 				<< "Cha: " << cha.getValue() << " (" << cha.getAttributeModifier() << ')' << endl;
 	}catch(...){
 		cout << "Bad attribute!" << endl;
+	}
+}
+
+void cleanup(){
+	for(vector<Skill*>::iterator skillPtr = standardSkills.begin(); skillPtr != standardSkills.end(); ++skillPtr){
+		delete *skillPtr;
 	}
 }
