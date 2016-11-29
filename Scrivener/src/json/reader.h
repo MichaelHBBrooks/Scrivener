@@ -100,7 +100,7 @@ private:
          TOKEN_ARRAY_END,     //    ]
          TOKEN_NEXT_ELEMENT,  //    ,
          TOKEN_MEMBER_ASSIGN, //    :
-         TOKEN_STRING,        //    "xxx"
+         TOKEN_STRING,        //    "xx"
          TOKEN_NUMBER,        //    [+/-]000.000[e[+/-]000]
          TOKEN_BOOLEAN,       //    true -or- false
          TOKEN_NULL,          //    null

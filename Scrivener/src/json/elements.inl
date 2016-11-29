@@ -33,13 +33,6 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <algorithm>
 #include <map>
 
-/*  
-
-TODO:
-* better documentation
-
-*/
-
 namespace json
 {
 

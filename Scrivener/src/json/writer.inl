@@ -31,14 +31,6 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <iostream>
 #include <iomanip>
 
-/*  
-
-TODO:
-* better documentation
-* unicode character encoding
-
-*/
-
 namespace json
 {
 

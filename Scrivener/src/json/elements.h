@@ -34,15 +34,6 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <string>
 #include <stdexcept>
 
-/*  
-
-TODO:
-* better documentation (doxygen?)
-* Unicode support
-* parent element accessors
-
-*/
-
 namespace json
 {
 
