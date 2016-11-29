@@ -12,16 +12,16 @@ Attribute::Attribute(){
 	value = 10;
 }
 
-Attribute::Attribute(short newAttribute){
+Attribute::Attribute(int newAttribute){
 	value = newAttribute;
 }
 
 
-void Attribute::setValue(short newAttribute){
+void Attribute::setValue(int newAttribute){
 	value = newAttribute;
 }
 
-short Attribute::getValue(){
+int Attribute::getValue(){
 	return value;
 }
 
@@ -43,7 +43,7 @@ std::string Attribute::getAbbreviation(){
 	return abbreviation;
 }
 
-short Attribute::getAttributeModifier(){
+int Attribute::getAttributeModifier(){
 //	return value>0 ? (value - 10) / 2 : (value-11) / 2;
 	return value%2 == 0 ? (value-10)/2 : (value-11) / 2;
 }

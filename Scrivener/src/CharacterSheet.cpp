@@ -11,8 +11,8 @@
 #include <cstdlib>
 #include <ctime>
 
-short rollD6();
-short Roll4D6DropLowest();
+int rollD6();
+int Roll4D6DropLowest();
 
 /**
  * A constructor for character sheets.
@@ -75,17 +75,17 @@ void CharacterSheet::rollStats(std::string method){
 /**
  * Randomly generate a number between 1-6.
  */
-short rollD6(){
+int rollD6(){
 	return std::rand()%6+1;
 }
 
 /**
  * Randomly roll four 6-sided dice and drop the lowest value.
  */
-short Roll4D6DropLowest(){
-	short roll;
-	short lowest;
-	short sum;
+int Roll4D6DropLowest(){
+	int roll;
+	int lowest;
+	int sum;
 
 	roll = lowest = sum = rollD6();
 
@@ -128,14 +128,14 @@ Attribute CharacterSheet::getAttribute(std::string attr){
 		throw "Undefined Attribute";
 }
 
-short CharacterSheet::getFortitudeSave(){
+int CharacterSheet::getFortitudeSave(){
 	return baseConstitution.getAttributeModifier();
 }
 
-short CharacterSheet::getReflexSave(){
+int CharacterSheet::getReflexSave(){
 	return baseDexterity.getAttributeModifier();
 }
 
-short CharacterSheet::getWillSave(){
+int CharacterSheet::getWillSave(){
 	return baseWisdom.getAttributeModifier();
 }

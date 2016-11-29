@@ -46,9 +46,9 @@ public:
 	Attribute *getStrPtr();
 
 	Attribute getAttribute(std::string stat);
-	short getFortitudeSave();
-	short getReflexSave();
-	short getWillSave();
+	int getFortitudeSave();
+	int getReflexSave();
+	int getWillSave();
 	void rollStats(std::string);
 };
 

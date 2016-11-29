@@ -20,7 +20,7 @@ Skill::Skill(){
  * @param newName
  * @param newValue
  */
-Skill::Skill(std::string& newName, short newValue){
+Skill::Skill(std::string& newName, int newValue){
 	name = newName;
 	value = newValue;
 }
@@ -38,7 +38,7 @@ Skill::Skill(std::string& newName){
  * Sets the skill value to newValue.
  * @param newValue
  */
-void Skill::setSkillValue(short newValue){
+void Skill::setSkillValue(int newValue){
 	value = newValue;
 }
 
@@ -46,7 +46,7 @@ void Skill::setSkillValue(short newValue){
  * Returns the skill value.
  * @return
  */
-short Skill::getSkillValue(){
+int Skill::getSkillValue(){
 	return value;
 }
 

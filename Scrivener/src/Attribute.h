@@ -11,16 +11,16 @@
 #include <string>
 
 class Attribute {
-	short value;
+	int value;
 	std::string name;
 	std::string abbreviation;
 
 public:
 	Attribute();
-	Attribute(short);
+	Attribute(int);
 
-	void setValue(short);
-	short getValue();
+	void setValue(int);
+	int getValue();
 
 	void setName(std::string);
 	std::string getName();
@@ -28,7 +28,7 @@ public:
 	void setAbbreviation(std::string);
 	std::string getAbbreviation();
 
-	short getAttributeModifier();
+	int getAttributeModifier();
 };
 
 #endif /* SRC_ATTRIBUTE_H_ */
