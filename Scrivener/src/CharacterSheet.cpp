@@ -128,14 +128,26 @@ Attribute CharacterSheet::getAttribute(std::string attr){
 		throw "Undefined Attribute";
 }
 
+/**
+ * Return the character's Fortitude save.
+ * @return
+ */
 int CharacterSheet::getFortitudeSave(){
 	return baseConstitution.getAttributeModifier();
 }
 
+/**
+ * Return the character's Reflex save.
+ * @return
+ */
 int CharacterSheet::getReflexSave(){
 	return baseDexterity.getAttributeModifier();
 }
 
+/**
+ * Return the character's Will save.
+ * @return
+ */
 int CharacterSheet::getWillSave(){
 	return baseWisdom.getAttributeModifier();
 }
