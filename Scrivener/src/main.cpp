@@ -11,9 +11,9 @@
  * This program was designed to help answer that question.
  */
 
-#include "Attribute.h"
-#include "Skill.h"
-#include "CharacterSheet.h"
+#include "character/Attribute.h"
+#include "character/Skill.h"
+#include "character/CharacterSheet.h"
 #include "json/reader.h"
 #include "json/writer.h"
 #include "json/elements.h"
