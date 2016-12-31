@@ -1,0 +1,124 @@
+{
+	"races": {
+		"version": "3.5",
+		"race": [
+			{
+				"name": "Human",
+				"id": 1,
+				"size": "Medium",
+				"shape": "Humanoid",
+				"baseLandSpeed": 30,
+				"languages": [
+					"Common"
+				],
+				"favoredClass": "any",
+				"startingAges": [
+					{
+						"adulthood": "15 years"
+					},
+					{
+						"simple": "+1d4"
+					},
+					{
+						"moderate": "+1d6"
+					},
+					{
+						"complex": "+2d6"
+					}
+				],
+				"agingEffects": [
+					{
+						"middleAge": "35 years",
+						"strength": -1,
+						"dexterity": -1,
+						"constitution": -1,
+						"intelligence": 1,
+						"wisdom": 1,
+						"charisma": 1
+					},
+					{
+						"old": "53 years",
+						"strength": -2,
+						"dexterity": -2,
+						"constitution": -2,
+						"intelligence": 2,
+						"wisdom": 2,
+						"charisma": 2
+					},
+					{
+						"venerable": "70 years",
+						"strength": -3,
+						"dexterity": -3,
+						"constitution": -3,
+						"intelligence": 3,
+						"wisdom": 3,
+						"charisma": 3
+					},
+					{
+						"maximumAge": "+2d20"
+					}
+				],
+				"height": [
+					{
+						"male": [
+							{
+								"baseHeight": "4' 10"
+							},
+							{
+								"heightModifier": "+2d10"
+							}
+						]
+					},
+					{
+						"female": [
+							{
+								"baseHeight": "4' 5"
+							},
+							{
+								"heightModifier": "+2d10"
+							}
+						]
+					}
+				],
+				"weight": [
+					{
+						"male": [
+							{
+								"baseWeight": "120 lb."
+							},
+							{
+								"heightModifier": "x(2d4) lb."
+							}
+						]
+					},
+					{
+						"female": [
+							{
+								"baseHeight": "85 lb."
+							},
+							{
+								"heightModifier": "x(2d4) lb."
+							}
+						]
+					}
+				],
+				"bonusFeat": [
+					{
+						"name": "any",
+						"when": "level 1"
+					}
+				],
+				"bonusSkillPoints": [
+					{
+						"amount": 4,
+						"when": "level 1"
+					},
+					{
+						"amount": 1,
+						"when": "level 2+"
+					}
+				]
+			}
+		]
+	}
+}
