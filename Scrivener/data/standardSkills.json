@@ -1,0 +1,205 @@
+{
+	"skills": {
+		"skill": [
+			{
+				"name": "Appraise",
+				"id": 1,
+				"ability": "intelligence"
+			},
+			{
+				"name": "Balance",
+				"id": 2,
+				"ability": "dexterity",
+				"armorPenalty": true
+			},
+			{
+				"name": "Bluff",
+				"id": 3,
+				"ability": "charisma"
+			},
+			{
+				"name": "Climb",
+				"id": 4,
+				"ability": "strength",
+				"armorPenalty": true
+			},
+			{
+				"name": "Concentration",
+				"id": 5,
+				"ability": "constitution"
+			},
+			{
+				"name": "Craft",
+				"id": 6,
+				"ability": "intelligence"
+			},
+			{
+				"name": "Decipher Script",
+				"id": 7,
+				"ability": "intelligence",
+				"trainedOnly": true
+			},
+			{
+				"name": "Diplomacy",
+				"id": 8,
+				"ability": "charisma"
+			},
+			{
+				"name": "Disable Device",
+				"id": 9,
+				"ability": "intelligence",
+				"trainedOnly": true
+			},
+			{
+				"name": "Disguise",
+				"id": 10,
+				"ability": "charisma"
+			},
+			{
+				"name": "Escape Artist",
+				"id": 11,
+				"ability": "dexterity",
+				"armorPenalty": true
+			},
+			{
+				"name": "Forgery",
+				"id": 12,
+				"ability": "intelligence"
+			},
+			{
+				"name": "Gather Information",
+				"id": 13,
+				"ability": "charisma"
+			},
+			{
+				"name": "Handle Animal",
+				"id": 14,
+				"ability": "charisma",
+				"trainedOnly": true
+			},
+			{
+				"name": "Heal",
+				"id": 15,
+				"ability": "wisdom"
+			},
+			{
+				"name": "Hide",
+				"id": 16,
+				"ability": "dexterity",
+				"armorPenalty": true
+			},
+			{
+				"name": "Intimidate",
+				"id": 17,
+				"ability": "charisma"
+			},
+			{
+				"name": "Jump",
+				"id": 18,
+				"ability": "strength",
+				"armorPenalty": true
+			},
+			{
+				"name": "Knowledge",
+				"id": 19,
+				"ability": "intelligence",
+				"trainedOnly": true
+			},
+			{
+				"name": "Listen",
+				"id": 20,
+				"ability": "wisdom"
+			},
+			{
+				"name": "Move Silently",
+				"id": 21,
+				"ability": "dexterity",
+				"armorPenalty": true
+			},
+			{
+				"name": "Open Lock",
+				"id": 22,
+				"ability": "dexterity",
+				"trainedOnly": true
+			},
+			{
+				"name": "Perform",
+				"id": 23,
+				"ability": "charisma"
+			},
+			{
+				"name": "Profession",
+				"id": 24,
+				"ability": "wisdom",
+				"trainedOnly": true
+			},
+			{
+				"name": "Ride",
+				"id": 25,
+				"ability": "dexterity"
+			},
+			{
+				"name": "Search",
+				"id": 26,
+				"ability": "intelligence"
+			},
+			{
+				"name": "Sense Motive",
+				"id": 27,
+				"ability": "wisdom"
+			},
+			{
+				"name": "Sleight of Hand",
+				"id": 28,
+				"ability": "dexterity",
+				"armorPenalty": true,
+				"trainedOnly": true
+			},
+			{
+				"name": "Speak Language",
+				"id": 29,
+				"ability": "none",
+				"trainedOnly": true
+			},
+			{
+				"name": "Spellcraft",
+				"id": 30,
+				"ability": "intelligence",
+				"trainedOnly": true
+			},
+			{
+				"name": "Spot",
+				"id": 31,
+				"ability": "wisdom"
+			},
+			{
+				"name": "Survival",
+				"id": 32,
+				"ability": "wisdom"
+			},
+			{
+				"name": "Swim",
+				"id": 33,
+				"ability": "strength",
+				"armorPenalty": true
+			},
+			{
+				"name": "Tumble",
+				"id": 34,
+				"ability": "dexterity",
+				"armorPenalty": true,
+				"trainedOnly": true
+			},
+			{
+				"name": "Use Magic Device",
+				"id": 35,
+				"ability": "charisma",
+				"trainedOnly": true
+			},
+			{
+				"name": "Use Rope",
+				"id": 36,
+				"ability": "dexterity"
+			}
+		]
+	}
