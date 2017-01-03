@@ -6,4 +6,5 @@
  */
 
 #include "AttributeModifier.h"
+
 #include "Attribute.h"

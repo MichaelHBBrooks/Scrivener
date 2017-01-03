@@ -8,8 +8,9 @@
 #ifndef SRC_ATTRIBUTEMODIFIER_H_
 #define SRC_ATTRIBUTEMODIFIER_H_
 
-#include "Attribute.h"
 #include <string>
+
+#include "Attribute.h"
 
 class AttributeModifier {
 	Attribute modifiedAttribute;

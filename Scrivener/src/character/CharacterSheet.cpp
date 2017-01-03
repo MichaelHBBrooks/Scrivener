@@ -1,15 +1,18 @@
-/**
- * Character Sheet
- * @author	Michael.H.B.Brooks@gmail.com
+/*
+ * CharacterSheet.cpp
  *
+ *  Created on: Oct 23, 2016
+ *      Author: jinieren
  */
 
 #include "CharacterSheet.h"
-#include "Attribute.h"
-#include <iostream>
-#include <string>
+
 #include <cstdlib>
 #include <ctime>
+#include <iostream>
+#include <string>
+
+#include "Attribute.h"
 
 int rollD6();
 int Roll4D6DropLowest();

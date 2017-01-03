@@ -1,11 +1,12 @@
 /*
- * attribute.cpp
+ * Attribute.cpp
  *
  *  Created on: Oct 16, 2016
  *      Author: jinieren
  */
 
 #include "Attribute.h"
+
 #include <string>
 
 Attribute::Attribute(){

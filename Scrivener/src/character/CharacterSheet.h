@@ -8,8 +8,9 @@
 #ifndef SRC_CHARACTERSHEET_H_
 #define SRC_CHARACTERSHEET_H_
 
-#include "Attribute.h"
 #include <string>
+
+#include "Attribute.h"
 
 class CharacterSheet {
 	std::string characterName;

@@ -6,6 +6,7 @@
  */
 
 #include "Skill.h"
+
 #include <string>
 
 /**
