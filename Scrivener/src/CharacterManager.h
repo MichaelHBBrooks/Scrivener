@@ -15,14 +15,6 @@
 #include "character/Skill.h"
 
 class CharacterManager{
-	const char* pathToConfigFile_;
-
-	//SRD = System Reference Document
-	std::vector<Skill*> standardSkills_;
-	std::vector<Race*> standardRaces_;
-
-	void loadSkills();
-	void loadRaces();
 public:
 	/**
 	 *
@@ -30,6 +22,15 @@ public:
 	 */
 	CharacterManager(const char* configPath_);
 	~CharacterManager();
+private:
+	const char* path_to_config_file_;
+
+	//SRD = System Reference Document
+	std::vector<Skill*> standard_skills_;
+	std::vector<Race*> standard_races_;
+
+	void loadSkills();
+	void loadRaces();
 };
 
 #endif /* SRC_CHARACTERMANAGER_H_ */
