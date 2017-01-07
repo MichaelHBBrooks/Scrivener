@@ -16,6 +16,7 @@
 
 #include "character/Race.h"
 #include "character/Skill.h"
+#include "json/json.h"
 
 CharacterManager::CharacterManager(const char* config_path_) : path_to_config_file_(config_path_){
 	std::string line;
@@ -44,17 +45,18 @@ CharacterManager::CharacterManager(const char* config_path_) : path_to_config_fi
 		//	}else{
 		//		std::cout << "racesPath not found.\n";
 		//	}
-		std::string skillsPath;
-		std::string racesPath;
-		std::string itemsPath;
+		std::string skills_path;
+		std::string races_path;
+		std::string items_path;
 		if(params.find("skillsPath") != params.end()){
-			skillsPath = params.find("skillsPath")->second;
+			skills_path = params.find("skillsPath")->second;
+			loadSkills(skills_path);
 		}
 		if(params.find("racesPath") != params.end()){
-			racesPath = params.find("racesPath")->second;
+			races_path = params.find("racesPath")->second;
 		}
 		if(params.find("itemsPath") != params.end()){
-			itemsPath = params.find("itemsPath")->second;
+			items_path = params.find("itemsPath")->second;
 		}
 	}
 }
@@ -62,3 +64,13 @@ CharacterManager::~CharacterManager(){
 
 }
 
+void CharacterManager::loadSkills(const std::string& skills_path){
+	std::ifstream skills_file (skills_path, std::ifstream::binary);
+	Json::Value root;
+	Json::Reader reader;
+	bool parsing_successful = reader.parse(skills_file, root, false);
+	if (!parsing_successful){
+		std::cout << reader.getFormattedErrorMessages() << std::endl;
+	}
+	std::cout << root;
+}

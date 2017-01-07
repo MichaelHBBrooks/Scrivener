@@ -26,10 +26,10 @@ private:
 	const char* path_to_config_file_;
 
 	//SRD = System Reference Document
-	std::vector<Skill*> standard_skills_;
-	std::vector<Race*> standard_races_;
+	std::vector<Skill*> skills_;
+	std::vector<Race*> races_;
 
-	void loadSkills();
+	void loadSkills(const std::string&);
 	void loadRaces();
 };
 
