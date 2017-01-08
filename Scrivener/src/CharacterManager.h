@@ -29,7 +29,7 @@ private:
 	std::vector<Skill*> skills_;
 	std::vector<Race*> races_;
 
-	void loadSkills(const std::string&);
+	void loadSkills(const std::string& skills_path_);
 	void loadRaces();
 };
 

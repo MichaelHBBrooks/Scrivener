@@ -72,5 +72,16 @@ void CharacterManager::loadSkills(const std::string& skills_path){
 	if (!parsing_successful){
 		std::cout << reader.getFormattedErrorMessages() << std::endl;
 	}
-	std::cout << root;
+	//std::cout << root;
+	if(root.size() > 0){
+		Json::Value skill_list = root["skills"]["skill"];
+		Json::Value skill;
+		std::cout << "skills found: " << std::endl;
+//		std::cout << "  " << skill[0] << std:: endl;
+//		std::cout << "  " << skill[1] << std:: endl;
+		for(Json::ValueIterator itr = skill_list.begin(); itr != skill_list.end(); itr++){
+			skill = *itr;
+			std::cout << "   " << skill["name"].asString() << std::endl;
+		}
+	}
 }
