@@ -41,7 +41,6 @@ private:
 	//SRD = System Reference Document
 	std::vector<Skill*> skills_;
 	std::vector<Race*> races_;
-
 };
 
 } //  namespace Scrivener
