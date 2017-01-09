@@ -11,18 +11,18 @@
  * This program was designed to help answer that question.
  */
 
-#include <iostream>
-#include <sstream>
-#include <string>
-#include <vector>
+#include<iostream>
+#include<sstream>
+#include<string>
+#include<vector>
 
-//#include "character/Attribute.h"
-//#include "character/Skill.h"
-//#include "character/CharacterSheet.h"
-//#include "json/reader.h"
-//#include "json/writer.h"
-//#include "json/elements.h"
-#include "CharacterManager.h"
+//#include"character/Attribute.h"
+//#include"character/Skill.h"
+//#include"character/CharacterSheet.h"
+//#include"json/reader.h"
+//#include"json/writer.h"
+//#include"json/elements.h"
+#include"CharacterManager.h"
 
 using namespace std;
 
@@ -70,7 +70,7 @@ int main(int argc, char* argv[]){
 	CharacterManager cm2("settings.ini");
 
 	cout << "Number of arguments: " << argc << endl;
-	for (int i = 0; i < argc; ++i) {
+	for(int i = 0; i < argc; ++i){
 		cout << argv[i] << endl;
 	}
 	return 0;

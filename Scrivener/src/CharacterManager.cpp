@@ -5,36 +5,33 @@
  *      Author: jinieren
  */
 
-#include "CharacterManager.h"
+#include"CharacterManager.h"
 
-#include <fstream>
-#include <iterator>
-#include <iostream>
-#include <map>
-#include <regex>
-#include <string>
+#include<fstream>
+#include<iterator>
+#include<iostream>
+#include<map>
+#include<regex>
+#include<string>
 
-#include "character/Race.h"
-#include "character/Skill.h"
-#include "json/json.h"
+#include"character/Race.h"
+#include"character/Skill.h"
+#include"json/json.h"
 
 using namespace Scrivener;
 
-CharacterManager::CharacterManager(const char* config_path_) : path_to_config_file_(config_path_){
+CharacterManager::CharacterManager(const char* new_config_path_) :
+		path_to_config_file_(new_config_path_){
 	std::string line;
 	std::regex key_value_pair("^\\s*([^#][a-zA-Z0-9]+)\\s*=\\s*(.+)");
 	std::smatch match;
-	std::ifstream my_file(config_path_);
-	std::map<std::string,std::string> params;
+	std::ifstream my_file(path_to_config_file_);
+	std::map<std::string, std::string> params;
 
 	if(my_file.is_open()){
-		while(getline(my_file,line)){
+		while(getline(my_file, line)){
 			if(std::regex_search(line, match, key_value_pair)){
-//				std::cout << "Matches for '" << line << "'\n";
-//				for (size_t i = 0; i < match.size(); ++i){
-//					std::cout << i << " = '" << match[i] << "'\n";
-//				}
-				params.insert(std::make_pair<std::string,std::string>(match[1],match[2]));
+				params.insert(std::make_pair<std::string, std::string>(match[1], match[2]));
 			}
 		}
 		//	std::map<std::string, std::string>::iterator it = params.begin();
@@ -62,16 +59,20 @@ CharacterManager::CharacterManager(const char* config_path_) : path_to_config_fi
 		}
 	}
 }
-CharacterManager::~CharacterManager(){
 
+CharacterManager::~CharacterManager(){
+	for(std::vector<Skill*>::iterator skillPtr = skills_.begin(); skillPtr != skills_.end();
+			++skillPtr){
+		delete *skillPtr;
+	}
 }
 
 void CharacterManager::loadSkills(const std::string& skills_path){
-	std::ifstream skills_file (skills_path, std::ifstream::binary);
+	std::ifstream skills_file(skills_path, std::ifstream::binary);
 	Json::Value json_root;
 	Json::Reader json_reader;
 	bool parsing_successful = json_reader.parse(skills_file, json_root, false);
-	if (!parsing_successful){
+	if(!parsing_successful){
 		std::cout << json_reader.getFormattedErrorMessages() << std::endl;
 	}
 	//std::cout << json_root;

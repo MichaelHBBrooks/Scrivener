@@ -8,13 +8,13 @@
 #ifndef SRC_SKILL_H_
 #define SRC_SKILL_H_
 
-#include <string>
+#include<string>
 
-namespace Scrivener {
+namespace Scrivener{
 
 typedef unsigned int skill_id_t;
 
-class Skill {
+class Skill{
 //	struct synergyBonus {
 //		int bonusValue;
 //		Skill* synergySkill;

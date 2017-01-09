@@ -8,31 +8,40 @@
 #ifndef SRC_CHARACTERMANAGER_H_
 #define SRC_CHARACTERMANAGER_H_
 
-#include <string>
-#include <vector>
+#include<string>
+#include<vector>
 
-#include "character/Race.h"
-#include "character/Skill.h"
+#include"character/Race.h"
+#include"character/Skill.h"
 
-namespace Scrivener {
+namespace Scrivener{
 
 class CharacterManager{
 public:
 	/**
-	 *
-	 * @param
+	 * Create a centralized location to manage all Character Sheet data.
+	 * @param new_config_path_
 	 */
-	CharacterManager(const char* configPath_);
+	CharacterManager(const char* new_config_path_);
+
+	/**
+	 * Destroy everything we love before abandoning the digital ashes.
+	 */
 	~CharacterManager();
 private:
+	/**
+	 * Load the skills file defined at location skills_path_.
+	 * @param new_skills_path_
+	 */
+	void loadSkills(const std::string& skills_path_);
+	void loadRaces();
+
 	const char* path_to_config_file_;
 
 	//SRD = System Reference Document
 	std::vector<Skill*> skills_;
 	std::vector<Race*> races_;
 
-	void loadSkills(const std::string& skills_path_);
-	void loadRaces();
 };
 
 } //  namespace Scrivener
