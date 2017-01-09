@@ -31,7 +31,7 @@ using namespace std;
 //void printStats(CharacterSheet);
 //void cleanup();
 
-vector<Skill*> standardSkills;
+//vector<Skill*> standardSkills;
 
 /**
  *
@@ -66,13 +66,13 @@ int main(int argc, char* argv[]){
 //	cleanup();
 //	char asdf[20] = "something";
 //	CharacterManager cm(asdf);
+	using namespace Scrivener;
 	CharacterManager cm2("settings.ini");
 
 	cout << "Number of arguments: " << argc << endl;
 	for (int i = 0; i < argc; ++i) {
 		cout << argv[i] << endl;
 	}
-
 	return 0;
 }
 

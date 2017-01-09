@@ -18,6 +18,8 @@
 #include "character/Skill.h"
 #include "json/json.h"
 
+using namespace Scrivener;
+
 CharacterManager::CharacterManager(const char* config_path_) : path_to_config_file_(config_path_){
 	std::string line;
 	std::regex key_value_pair("^\\s*([^#][a-zA-Z0-9]+)\\s*=\\s*(.+)");

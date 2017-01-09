@@ -14,6 +14,8 @@
 #include "character/Race.h"
 #include "character/Skill.h"
 
+namespace Scrivener {
+
 class CharacterManager{
 public:
 	/**
@@ -32,5 +34,7 @@ private:
 	void loadSkills(const std::string& skills_path_);
 	void loadRaces();
 };
+
+} //  namespace Scrivener
 
 #endif /* SRC_CHARACTERMANAGER_H_ */

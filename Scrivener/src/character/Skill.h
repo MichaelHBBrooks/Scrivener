@@ -10,6 +10,8 @@
 
 #include <string>
 
+namespace Scrivener {
+
 typedef unsigned int skill_id_t;
 
 class Skill {
@@ -45,5 +47,7 @@ private:
 	const bool armor_penalty_;
 	const bool trained_only_;
 };
+
+}
 
 #endif /* SRC_SKILL_H_ */
