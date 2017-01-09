@@ -48,6 +48,6 @@ private:
 	const bool trained_only_;
 };
 
-}
+} //  namespace Scrivener
 
 #endif /* SRC_SKILL_H_ */
