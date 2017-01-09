@@ -66,22 +66,28 @@ CharacterManager::~CharacterManager(){
 
 void CharacterManager::loadSkills(const std::string& skills_path){
 	std::ifstream skills_file (skills_path, std::ifstream::binary);
-	Json::Value root;
-	Json::Reader reader;
-	bool parsing_successful = reader.parse(skills_file, root, false);
+	Json::Value json_root;
+	Json::Reader json_reader;
+	bool parsing_successful = json_reader.parse(skills_file, json_root, false);
 	if (!parsing_successful){
-		std::cout << reader.getFormattedErrorMessages() << std::endl;
+		std::cout << json_reader.getFormattedErrorMessages() << std::endl;
 	}
-	//std::cout << root;
-	if(root.size() > 0){
-		Json::Value skill_list = root["skills"]["skill"];
-		Json::Value skill;
-		std::cout << "skills found: " << std::endl;
-//		std::cout << "  " << skill[0] << std:: endl;
-//		std::cout << "  " << skill[1] << std:: endl;
-		for(Json::ValueIterator itr = skill_list.begin(); itr != skill_list.end(); itr++){
-			skill = *itr;
-			std::cout << "   " << skill["name"].asString() << std::endl;
+	//std::cout << json_root;
+	if(json_root.size() > 0){
+		Json::Value json_skill_list = json_root["skills"]["skill"];
+		Json::Value json_skill;
+		std::string skill_name;
+		int skill_id;
+		bool skill_armor;
+		bool skill_trained;
+		for(Json::ValueIterator itr = json_skill_list.begin(); itr != json_skill_list.end(); itr++){
+			json_skill = *itr;
+			skill_name = json_skill["name"].asString();
+			skill_id = json_skill["id"].asInt();
+			skill_armor = json_skill["armorPenalty"].asBool();
+			skill_trained = json_skill["trainedOnly"].asBool();
+			skills_.push_back(new Skill(skill_name, skill_id, skill_armor, skill_trained));
+			std::cout << "   " << skills_.back()->getSkillName() << std::endl;
 		}
 	}
 }
