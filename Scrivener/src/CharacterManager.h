@@ -31,7 +31,7 @@ public:
 private:
 	/**
 	 * Load the skills file defined at location skills_path_.
-	 * @param new_skills_path_
+	 * @param skills_path_
 	 */
 	void loadSkills(const std::string& skills_path_);
 	void loadRaces();
