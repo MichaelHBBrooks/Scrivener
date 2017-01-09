@@ -10,25 +10,40 @@
 
 #include <string>
 
-class Skill {
-	std::string name;
-	int value;
+typedef unsigned int skill_id_t;
 
+class Skill {
 //	struct synergyBonus {
 //		int bonusValue;
 //		Skill* synergySkill;
 //		std::string synergyCircumstance;
 //	};
 public:
-	Skill();
-	Skill(std::string&,int);
-	Skill(std::string&);
+	/**
+	 * A new skill is assigned a name and id.
+	 * @param new_name_
+	 * @param new_id_
+	 */
+	Skill(const std::string& new_name_, const skill_id_t new_id_, const bool new_armor_penalty_,
+			const bool new_trained_only_);
 
-	void setSkillValue(int);
-	int getSkillValue();
-
-	void setSkillName(std::string);
+	/**
+	 * Returns the skill name.
+	 * @return
+	 */
 	std::string getSkillName();
+
+	/**
+	 * Returns the skill id.
+	 * @return
+	 */
+	skill_id_t getSkillId();
+
+private:
+	const std::string name_;
+	const skill_id_t id_;
+	const bool armor_penalty_;
+	const bool trained_only_;
 };
 
 #endif /* SRC_SKILL_H_ */

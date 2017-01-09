@@ -9,60 +9,16 @@
 
 #include <string>
 
-/**
- * Sets a skill value to 0, but assigns no name.
- */
-Skill::Skill(){
-	value = 0;
+Skill::Skill(const std::string& new_name_, const skill_id_t new_id_, const bool new_armor_penalty_,
+		const bool new_trained_only_) :
+		name_(new_name_), id_(new_id_), armor_penalty_(new_armor_penalty_), trained_only_(
+				new_trained_only_) {
 }
 
-/**
- * A new skill is assigned a name and value.
- * @param newName
- * @param newValue
- */
-Skill::Skill(std::string& newName, int newValue){
-	name = newName;
-	value = newValue;
+std::string Skill::getSkillName() {
+	return name_;
 }
 
-/**
- * A new skill is assigned a name while the value defaults to 0.
- * @param newName
- */
-Skill::Skill(std::string& newName){
-	name = newName;
-	value = 0;
-}
-
-/**
- * Sets the skill value to newValue.
- * @param newValue
- */
-void Skill::setSkillValue(int newValue){
-	value = newValue;
-}
-
-/**
- * Returns the skill value.
- * @return
- */
-int Skill::getSkillValue(){
-	return value;
-}
-
-/**
- * Sets the skill name to newName.
- * @param newName
- */
-void Skill::setSkillName(std::string newName){
-	name = newName;
-}
-
-/**
- * Returns the skill name.
- * @return
- */
-std::string Skill::getSkillName(){
-	return name;
+skill_id_t Skill::getSkillId() {
+	return id_;
 }
