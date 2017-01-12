@@ -4,202 +4,202 @@
 			{
 				"name": "Appraise",
 				"id": 1,
-				"ability": "intelligence"
+				"attribute": "intelligence"
 			},
 			{
 				"name": "Balance",
 				"id": 2,
-				"ability": "dexterity",
+				"attribute": "dexterity",
 				"armorPenalty": true
 			},
 			{
 				"name": "Bluff",
 				"id": 3,
-				"ability": "charisma"
+				"attribute": "charisma"
 			},
 			{
 				"name": "Climb",
 				"id": 4,
-				"ability": "strength",
+				"attribute": "strength",
 				"armorPenalty": true
 			},
 			{
 				"name": "Concentration",
 				"id": 5,
-				"ability": "constitution"
+				"attribute": "constitution"
 			},
 			{
 				"name": "Craft",
 				"id": 6,
-				"ability": "intelligence"
+				"attribute": "intelligence"
 			},
 			{
 				"name": "Decipher Script",
 				"id": 7,
-				"ability": "intelligence",
+				"attribute": "intelligence",
 				"trainedOnly": true
 			},
 			{
 				"name": "Diplomacy",
 				"id": 8,
-				"ability": "charisma"
+				"attribute": "charisma"
 			},
 			{
 				"name": "Disable Device",
 				"id": 9,
-				"ability": "intelligence",
+				"attribute": "intelligence",
 				"trainedOnly": true
 			},
 			{
 				"name": "Disguise",
 				"id": 10,
-				"ability": "charisma"
+				"attribute": "charisma"
 			},
 			{
 				"name": "Escape Artist",
 				"id": 11,
-				"ability": "dexterity",
+				"attribute": "dexterity",
 				"armorPenalty": true
 			},
 			{
 				"name": "Forgery",
 				"id": 12,
-				"ability": "intelligence"
+				"attribute": "intelligence"
 			},
 			{
 				"name": "Gather Information",
 				"id": 13,
-				"ability": "charisma"
+				"attribute": "charisma"
 			},
 			{
 				"name": "Handle Animal",
 				"id": 14,
-				"ability": "charisma",
+				"attribute": "charisma",
 				"trainedOnly": true
 			},
 			{
 				"name": "Heal",
 				"id": 15,
-				"ability": "wisdom"
+				"attribute": "wisdom"
 			},
 			{
 				"name": "Hide",
 				"id": 16,
-				"ability": "dexterity",
+				"attribute": "dexterity",
 				"armorPenalty": true
 			},
 			{
 				"name": "Intimidate",
 				"id": 17,
-				"ability": "charisma"
+				"attribute": "charisma"
 			},
 			{
 				"name": "Jump",
 				"id": 18,
-				"ability": "strength",
+				"attribute": "strength",
 				"armorPenalty": true
 			},
 			{
 				"name": "Knowledge",
 				"id": 19,
-				"ability": "intelligence",
+				"attribute": "intelligence",
 				"trainedOnly": true
 			},
 			{
 				"name": "Listen",
 				"id": 20,
-				"ability": "wisdom"
+				"attribute": "wisdom"
 			},
 			{
 				"name": "Move Silently",
 				"id": 21,
-				"ability": "dexterity",
+				"attribute": "dexterity",
 				"armorPenalty": true
 			},
 			{
 				"name": "Open Lock",
 				"id": 22,
-				"ability": "dexterity",
+				"attribute": "dexterity",
 				"trainedOnly": true
 			},
 			{
 				"name": "Perform",
 				"id": 23,
-				"ability": "charisma"
+				"attribute": "charisma"
 			},
 			{
 				"name": "Profession",
 				"id": 24,
-				"ability": "wisdom",
+				"attribute": "wisdom",
 				"trainedOnly": true
 			},
 			{
 				"name": "Ride",
 				"id": 25,
-				"ability": "dexterity"
+				"attribute": "dexterity"
 			},
 			{
 				"name": "Search",
 				"id": 26,
-				"ability": "intelligence"
+				"attribute": "intelligence"
 			},
 			{
 				"name": "Sense Motive",
 				"id": 27,
-				"ability": "wisdom"
+				"attribute": "wisdom"
 			},
 			{
 				"name": "Sleight of Hand",
 				"id": 28,
-				"ability": "dexterity",
+				"attribute": "dexterity",
 				"armorPenalty": true,
 				"trainedOnly": true
 			},
 			{
 				"name": "Speak Language",
 				"id": 29,
-				"ability": "none",
+				"attribute": "none",
 				"trainedOnly": true
 			},
 			{
 				"name": "Spellcraft",
 				"id": 30,
-				"ability": "intelligence",
+				"attribute": "intelligence",
 				"trainedOnly": true
 			},
 			{
 				"name": "Spot",
 				"id": 31,
-				"ability": "wisdom"
+				"attribute": "wisdom"
 			},
 			{
 				"name": "Survival",
 				"id": 32,
-				"ability": "wisdom"
+				"attribute": "wisdom"
 			},
 			{
 				"name": "Swim",
 				"id": 33,
-				"ability": "strength",
+				"attribute": "strength",
 				"armorPenalty": true
 			},
 			{
 				"name": "Tumble",
 				"id": 34,
-				"ability": "dexterity",
+				"attribute": "dexterity",
 				"armorPenalty": true,
 				"trainedOnly": true
 			},
 			{
 				"name": "Use Magic Device",
 				"id": 35,
-				"ability": "charisma",
+				"attribute": "charisma",
 				"trainedOnly": true
 			},
 			{
 				"name": "Use Rope",
 				"id": 36,
-				"ability": "dexterity"
+				"attribute": "dexterity"
 			}
 		]
 	}

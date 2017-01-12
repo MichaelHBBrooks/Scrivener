@@ -12,6 +12,8 @@
 
 #include "Attribute.h"
 
+namespace Scrivener{
+
 class CharacterSheet {
 	std::string characterName;
 	std::string playerName;
@@ -34,23 +36,26 @@ class CharacterSheet {
 				size_colossal,
 				size_colossalPlus };
 
-	Attribute baseStrength;
-	Attribute baseDexterity;
-	Attribute baseConstitution;
-	Attribute baseIntelligence;
-	Attribute baseWisdom;
-	Attribute baseCharisma;
+//	Attribute baseStrength;
+//	Attribute baseDexterity;
+//	Attribute baseConstitution;
+//	Attribute baseIntelligence;
+//	Attribute baseWisdom;
+//	Attribute baseCharisma;
+	attribute_value_t baseAbilities[];
 
 public:
 	CharacterSheet();
-	Attribute getStr();
-	Attribute *getStrPtr();
+//	Attribute getStr();
+//	Attribute *getStrPtr();
 
-	Attribute getAttribute(std::string stat);
+	attribute_value_t getAttribute(Attribute stat);
 	int getFortitudeSave();
 	int getReflexSave();
 	int getWillSave();
 	void rollStats(std::string);
 };
+
+}
 
 #endif /* SRC_CHARACTERSHEET_H_ */

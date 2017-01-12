@@ -10,6 +10,8 @@
 
 #include<string>
 
+#include"Attribute.h"
+
 namespace Scrivener{
 
 typedef unsigned int skill_id_t;
@@ -27,25 +29,44 @@ public:
 	 * @param new_id_
 	 */
 	Skill(const std::string& new_name_, const skill_id_t new_id_, const bool new_armor_penalty_,
-			const bool new_trained_only_);
+			const bool new_trained_only_, const Attribute new_attribute_modifier_);
 
 	/**
 	 * Returns the skill name.
-	 * @return
+	 * @return The skill name.
 	 */
-	std::string getSkillName();
+	std::string getName();
 
 	/**
 	 * Returns the skill id.
-	 * @return
+	 * @return The skill id.
 	 */
-	skill_id_t getSkillId();
+	skill_id_t getId();
+
+	/**
+	 * Returns the Armor Penalty boolean.
+	 * @return True if armor affects skill rolls. False otherwise.
+	 */
+	bool isArmorPenalty();
+
+	/**
+	 * Returns the Trained Only boolean.
+	 * @return True if skill must be trained. False otherwise.
+	 */
+	bool isTrainedOnly();
+
+	/**
+	 * Returns the skill's attribute modifier.
+	 * @return The skill's attribute modifier.
+	 */
+	Attribute getAttributeModifier();
 
 private:
 	const std::string name_;
 	const skill_id_t id_;
 	const bool armor_penalty_;
 	const bool trained_only_;
+	const Attribute attribute_modifier_;
 };
 
 } //  namespace Scrivener

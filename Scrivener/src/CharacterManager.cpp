@@ -14,6 +14,7 @@
 #include<regex>
 #include<string>
 
+#include"character/Attribute.h"
 #include"character/Race.h"
 #include"character/Skill.h"
 #include"json/json.h"
@@ -83,14 +84,52 @@ void CharacterManager::loadSkills(const std::string& skills_path){
 		int skill_id;
 		bool skill_armor;
 		bool skill_trained;
+		std::string attribute;
+		Attribute skill_attribute_modifier;
 		for(Json::ValueIterator itr = json_skill_list.begin(); itr != json_skill_list.end(); itr++){
 			json_skill = *itr;
 			skill_name = json_skill["name"].asString();
 			skill_id = json_skill["id"].asInt();
 			skill_armor = json_skill["armorPenalty"].asBool();
 			skill_trained = json_skill["trainedOnly"].asBool();
-			skills_.push_back(new Skill(skill_name, skill_id, skill_armor, skill_trained));
-			std::cout << "   " << skills_.back()->getSkillName() << std::endl;
+			attribute = json_skill["attribute"].asString();
+			if(attribute == "strength"){
+				skill_attribute_modifier = Attribute::strength;
+			}else if(attribute == "dexterity"){
+				skill_attribute_modifier = Attribute::dexterity;
+			}else if(attribute == "constitution"){
+				skill_attribute_modifier = Attribute::constitution;
+			}else if(attribute == "intelligence"){
+				skill_attribute_modifier = Attribute::intelligence;
+			}else if(attribute == "wisdom"){
+				skill_attribute_modifier = Attribute::wisdom;
+			}else if(attribute == "charisma"){
+				skill_attribute_modifier = Attribute::charisma;
+			}else{
+				skill_attribute_modifier = static_cast<Attribute>(-1);
+			}
+
+			skills_.push_back(new Skill(skill_name, skill_id, skill_armor, skill_trained, skill_attribute_modifier));
+
+//			std::cout << '\t' << skills_.back()->getName() << '\t' << skills_.back()->getId() << '\t' << attribute << ":";
+//			if(skills_.back()->getAttributeModifier() == Attribute::strength){
+//				std::cout << "strength";
+//			}else if(skills_.back()->getAttributeModifier() == Attribute::dexterity){
+//				std::cout << "dexterity";
+//			}else if(skills_.back()->getAttributeModifier() == Attribute::constitution){
+//				std::cout << "constitution";
+//			}else if(skills_.back()->getAttributeModifier() == Attribute::intelligence){
+//				std::cout << "intelligence";
+//			}else if(skills_.back()->getAttributeModifier() == Attribute::wisdom){
+//				std::cout << "wisdom";
+//			}else if(skills_.back()->getAttributeModifier() == Attribute::charisma){
+//				std::cout << "charisma";
+//			}else if(static_cast<int>(skills_.back()->getAttributeModifier()) == -1){
+//				std::cout << "none";
+//			}else{
+//				std::cout << "undefined";
+//			}
+//			std::cout << std::endl;
 		}
 	}
 }

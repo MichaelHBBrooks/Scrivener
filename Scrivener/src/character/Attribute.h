@@ -8,27 +8,13 @@
 #ifndef SRC_ATTRIBUTE_H_
 #define SRC_ATTRIBUTE_H_
 
-#include <string>
+namespace Scrivener{
 
-class Attribute {
-	int value;
-	std::string name;
-	std::string abbreviation;
+typedef int attribute_value_t;
 
-public:
-	Attribute();
-	Attribute(int);
-
-	void setValue(int);
-	int getValue();
-
-	void setName(std::string);
-	std::string getName();
-
-	void setAbbreviation(std::string);
-	std::string getAbbreviation();
-
-	int getAttributeModifier();
+enum class Attribute{
+	strength, dexterity, constitution, intelligence, wisdom, charisma
 };
 
+}
 #endif /* SRC_ATTRIBUTE_H_ */
