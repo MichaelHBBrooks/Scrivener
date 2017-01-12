@@ -27,7 +27,7 @@ skill_id_t Skill::getId(){
 	return id_;
 }
 
-bool Skill::isArmorPenalty(){
+bool Skill::isArmorPenalized(){
 	return armor_penalty_;
 }
 

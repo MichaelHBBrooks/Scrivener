@@ -47,7 +47,7 @@ public:
 	 * Returns the Armor Penalty boolean.
 	 * @return True if armor affects skill rolls. False otherwise.
 	 */
-	bool isArmorPenalty();
+	bool isArmorPenalized();
 
 	/**
 	 * Returns the Trained Only boolean.
