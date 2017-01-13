@@ -81,11 +81,12 @@ void CharacterManager::loadSkills(const std::string& skills_path){
 		Json::Value json_skill_list = json_root["skills"]["skill"];
 		Json::Value json_skill;
 		std::string skill_name;
-		int skill_id;
+		skill_id_t skill_id;
 		bool skill_armor;
 		bool skill_trained;
 		std::string attribute;
 		Attribute skill_attribute_modifier;
+
 		for(Json::ValueIterator itr = json_skill_list.begin(); itr != json_skill_list.end(); itr++){
 			json_skill = *itr;
 			skill_name = json_skill["name"].asString();
@@ -109,7 +110,9 @@ void CharacterManager::loadSkills(const std::string& skills_path){
 				skill_attribute_modifier = static_cast<Attribute>(-1);
 			}
 
-			skills_.push_back(new Skill(skill_name, skill_id, skill_armor, skill_trained, skill_attribute_modifier));
+			skills_.push_back(
+					new Skill(skill_name, skill_id, skill_armor, skill_trained,
+							skill_attribute_modifier));
 
 //			std::cout << '\t' << skills_.back()->getName() << '\t' << skills_.back()->getId() << '\t' << attribute << ":";
 //			if(skills_.back()->getAttributeModifier() == Attribute::strength){
