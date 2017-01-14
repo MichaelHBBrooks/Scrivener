@@ -23,7 +23,7 @@ class CharacterSheet{
 	Alignment_axis1 base_alignment1;
 	Alignment_axis2 base_alignment2;
 	attribute_value_t base_abilities[6];
-	Skill base_skilles[];
+	//Skill base_skills[];
 
 public:
 	CharacterSheet();

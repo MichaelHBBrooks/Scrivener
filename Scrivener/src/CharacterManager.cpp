@@ -66,6 +66,10 @@ CharacterManager::~CharacterManager(){
 			++skillPtr){
 		delete *skillPtr;
 	}
+	for(std::vector<Race*>::iterator racePtr = races_.begin(); racePtr != races_.end();
+			++racePtr){
+		delete *racePtr;
+	}
 }
 
 void CharacterManager::loadSkills(const std::string& skills_path){
@@ -128,6 +132,71 @@ void CharacterManager::loadSkills(const std::string& skills_path){
 //			}else if(skills_.back()->getAttributeModifier() == Attribute::charisma){
 //				std::cout << "charisma";
 //			}else if(static_cast<int>(skills_.back()->getAttributeModifier()) == -1){
+//				std::cout << "none";
+//			}else{
+//				std::cout << "undefined";
+//			}
+//			std::cout << std::endl;
+		}
+	}
+}
+
+void CharacterManager::loadRaces(const std::string& races_path){
+	std::ifstream races_file(races_path, std::ifstream::binary);
+	Json::Value json_root;
+	Json::Reader json_reader;
+	bool parsing_successful = json_reader.parse(races_file, json_root, false);
+	if(!parsing_successful){
+		std::cout << json_reader.getFormattedErrorMessages() << std::endl;
+	}
+	//std::cout << json_root;
+	if(json_root.size() > 0){
+		Json::Value json_race_list = json_root["races"]["race"];
+		Json::Value json_race;
+		std::string json_race_size;  //This will be converted to enum.
+
+		std::string race_name;
+		race_id_t race_id;
+		std::string race_shape;
+		Size race_size;
+		int race_land_speed;
+		//std::vector<std::string> race_bonus_languages;
+
+		for(Json::ValueIterator itr = json_race_list.begin(); itr != json_race_list.end(); itr++){
+			json_race = *itr;
+			json_race_size = json_race["size"].asString();
+
+			race_name = json_race["name"].asString();
+			race_id = json_race["id"].asInt();
+			race_shape = json_race["shape"].asString();
+			race_land_speed = json_race["baseLandSpeed"].asInt();
+
+			if(json_race_size == "fine"){
+				race_size = Size::fine;
+			}else{
+				race_size = Size::medium;
+			}
+
+			races_.push_back(new Race(race_name,
+					race_id,
+					race_shape,
+					race_size,
+					race_land_speed));
+
+//			std::cout << '\t' << races_.back()->getName() << '\t' << races_.back()->getId() << '\t' << attribute << ":";
+//			if(races_.back()->getAttributeModifier() == Attribute::strength){
+//				std::cout << "strength";
+//			}else if(races_.back()->getAttributeModifier() == Attribute::dexterity){
+//				std::cout << "dexterity";
+//			}else if(races_.back()->getAttributeModifier() == Attribute::constitution){
+//				std::cout << "constitution";
+//			}else if(races_.back()->getAttributeModifier() == Attribute::intelligence){
+//				std::cout << "intelligence";
+//			}else if(races_.back()->getAttributeModifier() == Attribute::wisdom){
+//				std::cout << "wisdom";
+//			}else if(races_.back()->getAttributeModifier() == Attribute::charisma){
+//				std::cout << "charisma";
+//			}else if(static_cast<int>(races_.back()->getAttributeModifier()) == -1){
 //				std::cout << "none";
 //			}else{
 //				std::cout << "undefined";

@@ -34,7 +34,12 @@ private:
 	 * @param skills_path_
 	 */
 	void loadSkills(const std::string& skills_path_);
-	void loadRaces();
+
+	/**
+	 * Load the races file defined at location races_path_.
+	 * @param races_path_
+	 */
+	void loadRaces(const std::string& races_path_);
 
 	const char* path_to_config_file_;
 
