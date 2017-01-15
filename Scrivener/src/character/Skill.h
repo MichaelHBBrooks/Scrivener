@@ -17,19 +17,17 @@ namespace Scrivener{
 typedef unsigned int skill_id_t;
 
 class Skill{
-//	struct synergyBonus {
-//		int bonusValue;
-//		Skill* synergySkill;
-//		std::string synergyCircumstance;
-//	};
 public:
 	/**
 	 * A new skill is assigned a name and id.
 	 * @param new_name_
 	 * @param new_id_
 	 */
-	Skill(const std::string& new_name_, const skill_id_t new_id_, const bool new_armor_penalty_,
-			const bool new_trained_only_, const Attribute new_attribute_modifier_);
+	Skill(const std::string& new_name_,
+			const skill_id_t new_id_,
+			const bool new_armor_penalty_,
+			const bool new_trained_only_,
+			const Attribute new_attribute_modifier_);
 
 	/**
 	 * Returns the skill name.

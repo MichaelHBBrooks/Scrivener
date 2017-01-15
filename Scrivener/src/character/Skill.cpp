@@ -13,10 +13,16 @@
 
 using namespace Scrivener;
 
-Skill::Skill(const std::string& new_name_, const skill_id_t new_id_, const bool new_armor_penalty_,
-		const bool new_trained_only_, const Attribute new_attribute_modifier_) :
-		name_(new_name_), id_(new_id_), armor_penalty_(new_armor_penalty_), trained_only_(
-				new_trained_only_), attribute_modifier_(new_attribute_modifier_){
+Skill::Skill(const std::string& new_name_,
+		const skill_id_t new_id_,
+		const bool new_armor_penalty_,
+		const bool new_trained_only_,
+		const Attribute new_attribute_modifier_) :
+				name_(new_name_),
+				id_(new_id_),
+				armor_penalty_(new_armor_penalty_),
+				trained_only_(new_trained_only_),
+				attribute_modifier_(new_attribute_modifier_){
 }
 
 std::string Skill::getName(){
