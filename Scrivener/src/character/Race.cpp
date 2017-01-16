@@ -41,5 +41,3 @@ Race::Race(const std::string new_name_,
 //				bonus_languages_(new_bonus_languages_){
 //
 //}
-
-#include <string>
