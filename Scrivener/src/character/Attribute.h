@@ -11,7 +11,7 @@
 #include<map>
 #include<string>
 
-namespace Scrivener{
+namespace Scrivener {
 
 typedef int attribute_value_t;
 
@@ -37,19 +37,5 @@ enum class Alignment_axis2{
 	good, neutral, evil
 };
 
-template <typename T>
-class EnumParser{
-public:
-	EnumParser(){};
-	T parseSomeEnum(const std::string &value_){
-		typename std::map<std::string, T>::const_iterator itr = enum_map_.find(value_);
-		if(itr == enum_map_.end()){
-			throw std::runtime_error("");
-		}
-		return itr->second;
-	}
-private:
-	std::map<std::string,T> enum_map_;
-};
-}
+}  //namespace Scrivener
 #endif /* SRC_ATTRIBUTE_H_ */

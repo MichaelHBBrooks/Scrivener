@@ -41,6 +41,11 @@ private:
 	 */
 	void loadRaces(const std::string& races_path_);
 
+	Size sizeStringToEnum(const std::string& value_);
+	Attribute AttributeStringToEnum(const std::string& value_);
+	Alignment_axis1 Alignment_axis1StringToEnum(const std::string& value_);
+	Alignment_axis2 Alignment_axis2StringToEnum(const std::string& value_);
+
 	const char* path_to_config_file_;
 
 	//SRD = System Reference Document

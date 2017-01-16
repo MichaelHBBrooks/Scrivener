@@ -171,11 +171,7 @@ void CharacterManager::loadRaces(const std::string& races_path){
 			race_shape = json_race["shape"].asString();
 			race_land_speed = json_race["baseLandSpeed"].asInt();
 
-			if(json_race_size == "fine"){
-				race_size = Size::fine;
-			}else{
-				race_size = Size::medium;
-			}
+			race_size = sizeStringToEnum(json_race_size);
 
 			races_.push_back(new Race(race_name,
 					race_id,
@@ -204,4 +200,68 @@ void CharacterManager::loadRaces(const std::string& races_path){
 //			std::cout << std::endl;
 		}
 	}
+}
+
+Size CharacterManager::sizeStringToEnum(const std::string& value_){
+	if(value_ == "fine"){
+		return Size::fine;
+	}else if(value_ == "diminutive"){
+		return Size::diminutive;
+	}else if(value_ == "tiny"){
+		return Size::tiny;
+	}else if(value_ == "small"){
+		return Size::small;
+	}else if(value_ == "medium"){
+		return Size::medium;
+	}else if(value_ == "large"){
+		return Size::large;
+	}else if(value_ == "huge"){
+		return Size::huge;
+	}else if(value_ == "gargantuan"){
+		return Size::gargantuan;
+	}else if(value_ == "colossal"){
+		return Size::colossal;
+	}else if(value_ == "colossalPlus"){
+		return Size::colossalPlus;
+	}
+	return static_cast<Size>(-1);
+}
+
+Attribute AttributeStringToEnum(const std::string& value_){
+	if(value_ == "strength"){
+		return Attribute::strength;
+	}else if(value_ == "dexterity"){
+		return Attribute::dexterity;
+	}else if(value_ == "constitution"){
+		return Attribute::constitution;
+	}else if(value_ == "intelligence"){
+		return Attribute::intelligence;
+	}else if(value_ == "wisdom"){
+		return Attribute::wisdom;
+	}else if(value_ == "charisma"){
+		return Attribute::charisma;
+	}
+	return static_cast<Attribute>(-1);
+}
+
+Alignment_axis1 Alignment_axis1StringToEnum(const std::string& value_){
+	if(value_ == "lawful"){
+		return Alignment_axis1::lawful;
+	}else if(value_ == "neutral"){
+		return Alignment_axis1::neutral;
+	}else if(value_ == "chaotic"){
+		return Alignment_axis1::chaotic;
+	}
+	return static_cast<Alignment_axis1>(-1);
+}
+
+Alignment_axis2 Alignment_axis2StringToEnum(const std::string& value_){
+	if(value_ == "good"){
+		return Alignment_axis2::good;
+	}else if(value_ == "neutral"){
+		return Alignment_axis2::neutral;
+	}else if(value_ == "evil"){
+		return Alignment_axis2::evil;
+	}
+	return static_cast<Alignment_axis2>(-1);
 }
