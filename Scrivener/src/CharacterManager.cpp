@@ -54,6 +54,7 @@ CharacterManager::CharacterManager(const char* new_config_path_) :
 		}
 		if(params.find("racesPath") != params.end()){
 			races_path = params.find("racesPath")->second;
+			loadRaces(races_path);
 		}
 		if(params.find("itemsPath") != params.end()){
 			items_path = params.find("itemsPath")->second;
@@ -149,18 +150,19 @@ void CharacterManager::loadRaces(const std::string& races_path){
 	if(!parsing_successful){
 		std::cout << json_reader.getFormattedErrorMessages() << std::endl;
 	}
-	//std::cout << json_root;
 	if(json_root.size() > 0){
 		Json::Value json_race_list = json_root["races"]["race"];
 		Json::Value json_race;
+		Json::Value json_aging_effects;
+		Json::Value json_age;
 		std::string json_race_size;  //This will be converted to enum.
+		int x = 0;
 
 		std::string race_name;
 		race_id_t race_id;
 		std::string race_shape;
 		Size race_size;
 		int race_land_speed;
-		//std::vector<std::string> race_bonus_languages;
 
 		for(Json::ValueIterator itr = json_race_list.begin(); itr != json_race_list.end(); itr++){
 			json_race = *itr;
@@ -172,6 +174,15 @@ void CharacterManager::loadRaces(const std::string& races_path){
 			race_land_speed = json_race["baseLandSpeed"].asInt();
 
 			race_size = sizeStringToEnum(json_race_size);
+
+			json_aging_effects = json_race["agingEffects"];
+			if(json_aging_effects.size() > 0){
+				for(Json::ValueIterator itr_aging_effects = json_aging_effects.begin();
+						itr_aging_effects != json_aging_effects.end(); itr_aging_effects++){
+					json_age = *itr_aging_effects;
+					std::cout << "Age "<< x++ << ": " << json_age << std::endl;
+				}
+			}
 
 			races_.push_back(new Race(race_name,
 					race_id,
@@ -198,6 +209,9 @@ void CharacterManager::loadRaces(const std::string& races_path){
 //				std::cout << "undefined";
 //			}
 //			std::cout << std::endl;
+		}
+		for(std::vector<Race*>::iterator itr = races_.begin(); itr != races_.end(); ++itr){
+			std::cout << (*itr)->getName() << std::endl;
 		}
 	}
 }

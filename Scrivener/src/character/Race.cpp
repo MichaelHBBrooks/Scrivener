@@ -41,3 +41,12 @@ Race::Race(const std::string new_name_,
 //				bonus_languages_(new_bonus_languages_){
 //
 //}
+
+string Race::getName(){
+	return name_;
+}
+
+Race::AgingEffects::AgingEffects(const std::string new_name_, const unsigned int new_starting_age_) :
+		name_(new_name_), starting_age_(new_starting_age_){
+	attribute_modifiers_[0] = 0;
+}

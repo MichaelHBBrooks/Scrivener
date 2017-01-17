@@ -26,9 +26,11 @@
 						"complex": "+2d6"
 					}
 				],
+				"maximumAge": "+2d20",
 				"agingEffects": [
 					{
-						"middleAge": "35 years",
+						"name": "Middle Age",
+						"age": "35 years",
 						"strength": -1,
 						"dexterity": -1,
 						"constitution": -1,
@@ -37,7 +39,8 @@
 						"charisma": 1
 					},
 					{
-						"old": "53 years",
+						"name": "Old",
+						"age": "53 years",
 						"strength": -2,
 						"dexterity": -2,
 						"constitution": -2,
@@ -46,16 +49,14 @@
 						"charisma": 2
 					},
 					{
-						"venerable": "70 years",
+						"name": "Venerable",
+						"age": "70 years",
 						"strength": -3,
 						"dexterity": -3,
 						"constitution": -3,
 						"intelligence": 3,
 						"wisdom": 3,
 						"charisma": 3
-					},
-					{
-						"maximumAge": "+2d20"
 					}
 				],
 				"height": [
@@ -183,9 +184,11 @@
 						"complex": "+2d6"
 					}
 				],
+				"maximumAge": "+3d20",
 				"agingEffects": [
 					{
-						"middleAge": "35 years",
+						"name": "Middle Age",
+						"age": "100 years",
 						"strength": -1,
 						"dexterity": -1,
 						"constitution": -1,
@@ -194,7 +197,8 @@
 						"charisma": 1
 					},
 					{
-						"old": "53 years",
+						"name": "Old",
+						"age": "150 years",
 						"strength": -2,
 						"dexterity": -2,
 						"constitution": -2,
@@ -203,16 +207,14 @@
 						"charisma": 2
 					},
 					{
-						"venerable": "70 years",
+						"name": "Venerable",
+						"age": "200 years",
 						"strength": -3,
 						"dexterity": -3,
 						"constitution": -3,
 						"intelligence": 3,
 						"wisdom": 3,
 						"charisma": 3
-					},
-					{
-						"maximumAge": "+2d20"
 					}
 				],
 				"height": [
