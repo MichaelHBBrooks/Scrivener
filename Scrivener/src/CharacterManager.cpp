@@ -153,10 +153,7 @@ void CharacterManager::loadRaces(const std::string& races_path){
 	if(json_root.size() > 0){
 		Json::Value json_race_list = json_root["races"]["race"];
 		Json::Value json_race;
-		Json::Value json_aging_effects;
-		Json::Value json_age;
 		std::string json_race_size;  //This will be converted to enum.
-		int x = 0;
 
 		std::string race_name;
 		race_id_t race_id;
@@ -175,14 +172,6 @@ void CharacterManager::loadRaces(const std::string& races_path){
 
 			race_size = sizeStringToEnum(json_race_size);
 
-			json_aging_effects = json_race["agingEffects"];
-			if(json_aging_effects.size() > 0){
-				for(Json::ValueIterator itr_aging_effects = json_aging_effects.begin();
-						itr_aging_effects != json_aging_effects.end(); itr_aging_effects++){
-					json_age = *itr_aging_effects;
-					std::cout << "Age "<< x++ << ": " << json_age << std::endl;
-				}
-			}
 
 			races_.push_back(new Race(race_name,
 					race_id,

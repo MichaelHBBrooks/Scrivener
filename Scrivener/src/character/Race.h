@@ -33,12 +33,6 @@ public:
 
 	std::string getName();
 
-	struct AgingEffects{
-		AgingEffects(const std::string new_name_, const unsigned int new_starting_age_);
-		const std::string name_;
-		const unsigned int starting_age_;
-		int attribute_modifiers_[6];
-	};
 private:
 	const std::string name_;
 	const race_id_t id_;
